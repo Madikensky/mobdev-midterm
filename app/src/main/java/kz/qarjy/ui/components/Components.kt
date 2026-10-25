@@ -169,7 +169,7 @@ fun CategoryFilterChip(label: String, selected: Boolean, onClick: () -> Unit) {
 fun SearchField(
     query: String,
     onQueryChange: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     OutlinedTextField(
         value = query,

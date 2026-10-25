@@ -83,11 +83,13 @@ fun AddExpenseScreen(
 
         OutlinedTextField(
             value = note,
-            onValueChange = { note = it },
+            onValueChange = { if(it.length <= 50) note = it },
             modifier = Modifier.fillMaxWidth(),
             label = { Text("Note (optional)") },
-            singleLine = true
+            singleLine = true,
         )
+
+        Text(text = "${note.length} / 50")
 
         Button(
             onClick = { onSave(amount, category, note) },
