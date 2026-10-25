@@ -8,10 +8,9 @@ enum class Category(val title: String, val emoji: String) {
     SHOPPING("Shopping", "🛍️"),
     FUN("Fun", "🎬"),
     BILLS("Bills", "💡"),
-    OTHER("Other", "📦")
+    OTHER("Other", "📦"),
 }
 
-/** One spending record. [amount] is in tenge (whole numbers are enough for this app). */
 data class Expense(
     val id: Int,
     val amount: Int,

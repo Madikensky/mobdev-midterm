@@ -21,7 +21,6 @@ import kz.qarjy.ui.components.ExpenseItem
 import kz.qarjy.ui.components.LoadingBox
 import kz.qarjy.ui.components.SummaryCard
 
-/** Stateless: draws [state], reports navigation intent through [onSeeAll]. */
 @Composable
 fun HomeScreen(
     state: QarjyUiState,
@@ -37,7 +36,6 @@ fun HomeScreen(
 
     LazyColumn(
         modifier = modifier.fillMaxSize(),
-        // bottom padding keeps the last item clear of the floating action button
         contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 96.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {

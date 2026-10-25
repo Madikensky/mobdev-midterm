@@ -24,7 +24,6 @@ import kz.qarjy.ui.screens.AddExpenseScreen
 import kz.qarjy.ui.screens.HistoryScreen
 import kz.qarjy.ui.screens.HomeScreen
 
-/** The three destinations of the app. Routes are plain strings. */
 sealed class Screen(val route: String) {
     data object Home : Screen("home")
     data object History : Screen("history")
@@ -40,14 +39,11 @@ private val bottomItems = listOf(
 
 @Composable
 fun QarjyApp(viewModel: QarjyViewModel = viewModel()) {
-    // Lifecycle-aware collection: stops collecting when the app is in the background.
     val state by viewModel.uiState.collectAsStateWithLifecycle()
 
-    // rememberNavController keeps the back stack across rotation (it is saved internally).
     val navController = rememberNavController()
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 
-    // The Add screen is a full-screen form: hide the bottom bar and FAB there.
     val showChrome = currentRoute != Screen.Add.route
 
     Scaffold(
@@ -105,7 +101,6 @@ fun QarjyApp(viewModel: QarjyViewModel = viewModel()) {
     }
 }
 
-/** Standard bottom-bar navigation: one copy of each tab, state of each tab is restored. */
 private fun NavHostController.navigateTopLevel(route: String) {
     navigate(route) {
         popUpTo(graph.findStartDestination().id) { saveState = true }

@@ -20,7 +20,6 @@ import kz.qarjy.ui.components.ExpenseItem
 import kz.qarjy.ui.components.LoadingBox
 import kz.qarjy.ui.components.SearchField
 
-/** Stateless: search text and filter live in the ViewModel, events go up as callbacks. */
 @Composable
 fun HistoryScreen(
     state: QarjyUiState,
