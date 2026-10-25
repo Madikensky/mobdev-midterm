@@ -10,7 +10,6 @@ android {
 
     defaultConfig {
         applicationId = "kz.qarjy"
-        // 26: java.time.LocalDate is available natively from API 26
         minSdk = 26
         targetSdk = 35
         versionCode = 1

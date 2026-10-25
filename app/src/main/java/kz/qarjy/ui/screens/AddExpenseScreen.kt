@@ -30,11 +30,6 @@ import androidx.compose.ui.unit.dp
 import kz.qarjy.data.Category
 import kz.qarjy.ui.components.CategoryFilterChip
 
-/**
- * The form draft is UI-only state, so it lives HERE in rememberSaveable
- * (survives rotation and process death) and is NOT pushed to the ViewModel on every keystroke.
- * Only the finished result goes up through [onSave].
- */
 @Composable
 fun AddExpenseScreen(
     onSave: (amount: Int, category: Category, note: String) -> Unit,
@@ -51,7 +46,7 @@ fun AddExpenseScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .imePadding()   // keep the Save button visible above the keyboard
+            .imePadding()
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
@@ -65,7 +60,6 @@ fun AddExpenseScreen(
         OutlinedTextField(
             value = amountText,
             onValueChange = { new ->
-                // accept digits only, max 9 characters
                 if (new.length <= 9 && new.all { it.isDigit() }) amountText = new
             },
             modifier = Modifier.fillMaxWidth(),

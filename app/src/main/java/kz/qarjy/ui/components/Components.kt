@@ -39,7 +39,6 @@ import kz.qarjy.data.Expense
 import kz.qarjy.ui.formatDate
 import kz.qarjy.ui.formatKzt
 
-/** Reusable #1: round badge with the category emoji. */
 @Composable
 fun CategoryBadge(category: Category, modifier: Modifier = Modifier) {
     Box(
@@ -53,7 +52,6 @@ fun CategoryBadge(category: Category, modifier: Modifier = Modifier) {
     }
 }
 
-/** Reusable #2: one expense row. The delete button appears only if [onDelete] is given. */
 @Composable
 fun ExpenseItem(
     expense: Expense,
@@ -98,7 +96,6 @@ fun ExpenseItem(
     }
 }
 
-/** Reusable #3: big total card for the Home screen. */
 @Composable
 fun SummaryCard(
     title: String,
@@ -123,7 +120,6 @@ fun SummaryCard(
     }
 }
 
-/** Reusable #4: category name + proportional bar + amount. [fraction] is 0f..1f. */
 @Composable
 fun CategoryBarRow(
     category: Category,
@@ -164,13 +160,11 @@ fun CategoryBarRow(
     }
 }
 
-/** Reusable #5: category / "All" filter chip. */
 @Composable
 fun CategoryFilterChip(label: String, selected: Boolean, onClick: () -> Unit) {
     FilterChip(selected = selected, onClick = onClick, label = { Text(label) })
 }
 
-/** Reusable #6: search text field with a clear button. */
 @Composable
 fun SearchField(
     query: String,
@@ -195,7 +189,6 @@ fun SearchField(
     )
 }
 
-/** Reusable #7: centered message for empty lists. */
 @Composable
 fun EmptyState(message: String, modifier: Modifier = Modifier) {
     Box(
@@ -212,7 +205,6 @@ fun EmptyState(message: String, modifier: Modifier = Modifier) {
     }
 }
 
-/** Reusable #8: full-size loading spinner. */
 @Composable
 fun LoadingBox(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {

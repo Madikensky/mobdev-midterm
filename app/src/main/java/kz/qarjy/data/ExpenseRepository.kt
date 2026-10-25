@@ -3,15 +3,10 @@ package kz.qarjy.data
 import kotlinx.coroutines.delay
 import java.time.LocalDate
 
-/**
- * In-memory data source (a database comes later in the semester).
- * Every function returns a fresh immutable snapshot, so the ViewModel can publish it as state.
- */
 class ExpenseRepository {
     private val items = mutableListOf<Expense>()
     private var nextId = 1
 
-    /** `suspend` + delay imitates reading from storage, so the UI has a real loading state. */
     suspend fun load(): List<Expense> {
         delay(400)
         if (items.isEmpty()) seed()
